@@ -2084,7 +2084,8 @@ button,
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
-  border-bottom: solid 5px #f56a6a;
+  flex-wrap: wrap;
+  border-bottom: solid 5px rgba(210, 215, 217, 0.75);
   padding: 6em 0 1em 0;
   position: relative; }
   #header > * {
@@ -2103,18 +2104,50 @@ button,
   @media screen and (max-width: 1680px) {
     #header {
       padding-top: 5em; } }
-  @media screen and (max-width: 736px) {
-    #header {
-      padding-top: 6.5em; }
-      #header .logo {
-        font-size: 1.25em;
-        margin: 0; }
-      #header .icons {
-        height: 5em;
-        line-height: 5em;
-        position: absolute;
-        right: -0.5em;
-        top: 0; } }
+@media screen and (min-width: 981px) {
+  #header {
+    flex-direction: column;
+    gap: 1.5em;
+  }
+
+  #header .logo {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  #header .top-nav {
+    width: 100%;
+    padding: 0 1em;
+  }
+
+  #header .top-nav ul {
+    justify-content: flex-start;
+  }
+
+  #header .icons {
+    width: 100%;
+    text-align: right;
+  }
+}
+
+@media screen and (max-width: 980px) {
+  #header {
+    padding-top: 5em; }
+}
+
+
+@media screen and (max-width: 736px) {
+  #header {
+    padding-top: 6.5em; }
+    #header .logo {
+      font-size: 1.25em;
+      margin: 0; }
+    #header .icons {
+      height: 5em;
+      line-height: 5em;
+      position: absolute;
+      right: -0.5em;
+      top: 0; } }
 
 /* Banner */
 #banner {
@@ -2336,11 +2369,25 @@ body.theme-dark, body.theme-dark *{
 body.theme-dark a{ color: #f67878; }
 body.theme-dark a:hover{ color: #f67878 !important; }
 
-body.theme-dark #header{ border-bottom-color: #f56a6a; }
+body.theme-dark #header{ border-bottom-color: var(--border); }
 body.theme-dark #sidebar{ background-color: var(--sidebar-bg); }
 body.theme-dark #sidebar > .inner > *{ border-bottom-color: var(--border); }
 body.theme-dark #sidebar > .inner > .alt{ background-color: var(--sidebar-alt-bg); }
 body.theme-dark #main > .inner > section{ border-top-color: var(--border); }
 
 body.theme-dark hr{ border-bottom-color: var(--border); }
+
+body.theme-light{
+  --bg: #ffffff;
+  --text: #7f888f;
+  --heading: #3d4449;
+  --sidebar-bg: #f5f6f7;
+  --sidebar-alt-bg: #eff1f2;
+  --border: rgba(210, 215, 217, 0.75);
+}
+
+body.theme-light, body.theme-light *{
+  color: initial;
+}
+
 
