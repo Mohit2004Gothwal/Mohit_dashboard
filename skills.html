@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Mohit Portfolio - Skills</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+
+				<header id="header">
+					<a href="index.html" class="logo"><strong>Mohit Kumar</strong> | Portfolio</a>
+					<nav class="top-nav" aria-label="Primary">
+						<ul>
+							<li><a href="index.html">🏠 Home</a></li>
+							<li><a href="projects.html">💼 Projects</a></li>
+							<li><a href="skills.html" class="active">🧠 Skills</a></li>
+							<li><a href="life.html">🌿 Life</a></li>
+							<li><a href="https://medium.com/@gothwalmohit03" target="_blank">📝 Blogs</a></li>
+							<li><a href="https://app.eraser.io/workspace/sTW33rMAhxR1FUxP1bBv" target="_blank">📚 Learning Roadmap</a></li>
+							<li><a href="https://drive.google.com/file/d/1uQPiCt5ysMvv6s08yMbSrd01zBVDsVL5/view?usp=sharing" target="_blank">📄 Resume</a></li>
+							<li><a href="contact.html">📬 Contact</a></li>
+						</ul>
+					</nav>
+
+					<ul class="icons">
+						<li>
+							<a href="#" class="icon solid fa-moon" id="theme-toggle" aria-label="Toggle theme"><span class="label">Toggle theme</span></a>
+						</li>
+						<li><a href="https://x.com/gothwalmohit03" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://www.instagram.com/mohit.gothwal.1253/" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+						<li><a href="https://medium.com/@gothwalmohit03" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
+						<li><a href="https://www.notion.so/f62d2a422571433a95d5ee7ac7144c80" class="icon solid fa-link"><span class="label">Notion</span></a></li>
+					</ul>
+				</header>
+
+				<section>
+					<header class="major">
+						<h2>Skills</h2>
+					</header>
+
+					<div class="features">
+						<article>
+							<span class="icon fa-code"></span>
+							<div class="content">
+								<h3>Web Development</h3>
+								<p>Node.js, Next.js, React basics, REST APIs, authentication, and responsive UI.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon solid fa-database"></span>
+							<div class="content">
+								<h3>Databases & System Design</h3>
+								<p>Schema design, indexing, caching concepts, scalability, and performance-oriented architecture.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon solid fa-cloud"></span>
+							<div class="content">
+								<h3>Cloud & DevOps</h3>
+								<p>Microsoft Azure and cloud deployment patterns, monitoring, and CI/CD fundamentals.</p>
+							</div>
+						</article>
+
+						<article>
+							<span class="icon solid fa-robot"></span>
+							<div class="content">
+								<h3>AI & APIs</h3>
+								<p>Integrating LLMs and AI services, prompt workflows, and building AI-powered features.</p>
+							</div>
+						</article>
+					</div>
+				</section>
+
+				<script src="assets/js/jquery.min.js"></script>
+				<script src="assets/js/browser.min.js"></script>
+				<script src="assets/js/breakpoints.min.js"></script>
+				<script src="assets/js/util.js"></script>
+				<script src="assets/js/main.js"></script>
+
+				<script>
+					(function () {
+						var btn = document.getElementById('theme-toggle');
+						if (!btn) return;
+						var STORAGE_KEY = 'theme';
+						function setTheme(theme) {
+							document.body.classList.remove('theme-dark', 'theme-light');
+							document.body.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
+							btn.classList.toggle('fa-moon', theme !== 'dark');
+							btn.classList.toggle('fa-sun', theme === 'dark');
+						}
+						var saved = localStorage.getItem(STORAGE_KEY);
+						if (saved === 'dark' || saved === 'light') setTheme(saved);
+						else {
+							var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+							setTheme(prefersDark ? 'dark' : 'light');
+						}
+						btn.addEventListener('click', function (e) {
+							e.preventDefault();
+							var isDark = document.body.classList.contains('theme-dark');
+							var next = isDark ? 'light' : 'dark';
+							localStorage.setItem(STORAGE_KEY, next);
+							setTheme(next);
+						});
+					})();
+				</script>
+			</div>
+		</div>
+
+		<div id="sidebar">
+			<div class="inner">
+				<section id="search" class="alt">
+					<form method="post" action="#">
+						<input type="text" name="query" id="query" placeholder="Search" />
+					</form>
+				</section>
+
+				<nav id="menu">
+					<header class="major">
+						<h2>Menu</h2>
+					</header>
+					<ul>
+						<li><a href="index.html">🏠 Home</a></li>
+						<li><a href="projects.html">💼 Projects</a></li>
+						<li><a href="skills.html">🧠 Skills</a></li>
+						<li><a href="life.html">🌿 Life</a></li>
+						<li><a href="https://medium.com/@gothwalmohit03" target="_blank">📝 Blogs</a></li>
+						<li><a href="https://app.eraser.io/workspace/sTW33rMAhxR1FUxP1bBv" target="_blank">📚 Learning Roadmap</a></li>
+						<li><a href="https://github.com/Mohit2004Gothwal/" target="_blank">💻 GitHub</a></li>
+						<li><a href="https://drive.google.com/file/d/1uQPiCt5ysMvv6s08yMbSrd01zBVDsVL5/view?usp=sharing" target="_blank">📄 Resume</a></li>
+						<li><a href="contact.html">📬 Contact</a></li>
+					</ul>
+				</nav>
+
+				<footer id="footer">
+					<p class="copyright">&copy; 2025 <strong>Mohit Gothwal</strong>. All rights reserved. <br />
+						Portfolio powered by <a href="https://html5up.net" target="_blank">HTML5 UP</a> | Images
+						from <a href="https://unsplash.com" target="_blank">Unsplash</a> <br />
+						Designed & Developed with ❤️ by Mohit Gothwal</p>
+				</footer>
+			</div>
+		</div>
+
+	</div>
+</body>
+
+</html>
+
