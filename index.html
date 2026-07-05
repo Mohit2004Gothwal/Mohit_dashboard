@@ -4,7 +4,7 @@
 <head>
 	<title>Mohit Portfolio</title>
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
@@ -17,10 +17,28 @@
 		<div id="main">
 			<div class="inner">
 
-				<!-- Header -->
-				<header id="header">
-					<a href="index.html" class="logo"><strong>Mohit Kumar</strong> | Portfolio</a>
-					<ul class="icons">
+					<!-- Header (top navbar) -->
+					<header id="header">
+						<a href="index.html" class="logo"><strong>Mohit Kumar</strong> | Portfolio</a>
+						<!-- Navbar moved below logo via CSS -->
+						<nav class="top-nav" aria-label="Primary">
+							<ul>
+
+								<li><a href="index.html" class="active">🏠 Home</a></li>
+								<li><a href="projects.html">💼 Projects</a></li>
+								<li><a href="skills.html">🧠 Skills</a></li>
+								<li><a href="life.html">🌿 Life</a></li>
+								<li><a href="https://medium.com/@gothwalmohit03" target="_blank">📝 Blogs</a></li>
+								<li><a href="https://app.eraser.io/workspace/sTW33rMAhxR1FUxP1bBv" target="_blank">📚 Learning Roadmap</a></li>
+								<li><a href="https://drive.google.com/file/d/1uQPiCt5ysMvv6s08yMbSrd01zBVDsVL5/view?usp=sharing" target="_blank">📄 Resume</a></li>
+								<li><a href="contact.html">📬 Contact</a></li>
+							</ul>
+						</nav>
+						<ul class="icons">
+							<li>
+
+							</li>
+
 						<li><a href="https://x.com/gothwalmohit03" class="icon brands fa-twitter"><span
 									class="label">Twitter</span></a></li>
 						<li><a href="https://www.instagram.com/mohit.gothwal.1253/"
@@ -298,6 +316,35 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Theme toggle -->
+			<script>
+				(function () {
+
+					var btn = document.getElementById('theme-toggle');
+					if (!btn) return;
+					var STORAGE_KEY = 'theme';
+function setTheme(theme) {
+							document.body.classList.remove('theme-dark', 'theme-light');
+							document.body.classList.add(theme === 'dark' ? 'theme-dark' : 'theme-light');
+							var isDark = theme === 'dark';
+							btn.classList.toggle('fa-moon', !isDark);
+							btn.classList.toggle('fa-sun', isDark);
+							btn.setAttribute('aria-pressed', isDark ? 'true' : 'false');
+						}
+var saved = localStorage.getItem(STORAGE_KEY);
+						if (saved === 'dark' || saved === 'light') setTheme(saved);
+						else setTheme('light');
+					btn.addEventListener('click', function (e) {
+						e.preventDefault();
+						var isDark = document.body.classList.contains('theme-dark');
+var next = isDark ? 'light' : 'dark';
+						localStorage.setItem(STORAGE_KEY, next);
+						setTheme(next);
+						return false;
+					});
+				})();
+			</script>
 
 </body>
 
